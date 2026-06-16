@@ -1,0 +1,88 @@
+
+*{
+    margin: 0px;
+    padding :0px;
+}
+
+.navbar{
+    height: 10vh;
+    background-color :rgb(0, 0, 0);
+}
+
+.logo{
+  display: flex;
+  flex-direction: row;
+}
+
+.logo-img{
+  position: relative;
+  padding-top: 20px;
+  padding-left: 20px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.logo h1{
+  color: white;
+  padding: 25px 20px 25px 20px;
+  color: bisque;
+}
+
+.hero {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #2c2c2a;
+  padding: 2rem;
+}
+
+.hero-logo {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #f1efe8;
+  margin: 0 0 1rem;
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  font-style: italic;
+  color: #b4b2a9;
+  margin: 0 0 2rem;
+  max-width: 400px;
+}
+
+.hero-cta {
+  padding: 0.9rem 2.25rem;
+  background: transparent;
+  border: 1px solid #f1efe8;
+  border-radius: 4px;
+  color: #f1efe8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hero-cta:hover {
+  background: #f1efe8;
+  color: #2c2c2a;
+}
+
+@media (max-width :600px){
+    .hero-logo{
+        letter-spacing:0.8rem ;
+        font-size:2.2rem;
+    }
+
+    .hero-cta{
+        padding: 0.9rem 1.2rem;
+    }
+}
+
