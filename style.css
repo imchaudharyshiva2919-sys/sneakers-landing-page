@@ -1,179 +1,196 @@
+/* ============================================
+   VELORA — Sneakers Landing Page
+   ============================================ */
 
-*{
-    margin: 0px;
-    padding :0px;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@700&display=swap');
+
+/* ============  RESET  ============ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.navbar{
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-    height: 15vh;
-    align-items: center;
-    background-color :rgb(255, 255, 255);
-}
+/* ============  NAVBAR  ============ */
 
-.logo{
+/*
+  Layout:
+  [logo — far left, fixed width]  [spacer — pushes everything right]  [search | gap | links | gap | icons]
+
+  The logo takes only what it needs.
+  A flex spacer (margin-left: auto on the right group) pushes the group to the right.
+  Inside the right group: search | small gap | links | small gap | icons.
+*/
+
+.navbar {
+  position: relative;
   display: flex;
   flex-direction: row;
-
+  align-items: center;
+  height: 60px;
+  padding: 0 24px;
+  background-color: #000;
 }
 
-.inner-nav{
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    height: 7vh;
-    background-color :rgb(0, 0, 0);
-    width: 100vw;
+.inner-nav {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  z-index: 0;
 }
 
-.logo-img{
-  z-index: 1;
+/* ---- Logo — far left, takes only what it needs ---- */
+
+.logo {
   position: relative;
-  padding-top: 20px;
-  padding-left: 20px;
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+  /* NO margin-right — the spacer on .search-box handles the gap */
 }
 
-.logo h1{
+.logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.logo h1 {
+  padding: 0 10px;
+  color: bisque;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+/* ---- Search Box — margin-left:auto pushes entire right group away from logo ---- */
+
+.search-box {
+  position: relative;
   z-index: 1;
-  padding: 25px 20px 25px 20px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 220px;
+  margin-left: auto;             /* THIS is the big gap — pushes search+links+icons to the right */
+  margin-right: 20px;            /* small gap between search and nav links */
+  padding: 0.15rem 0.5rem;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-box:hover,
+.search-box:hover input {
+  background-color: #d9d7cf;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #000;
+  background: transparent;
+  cursor: pointer;
+}
+
+.search-box input::placeholder {
+  color: #666;
+}
+
+.search-box i {
+  font-size: 15px;
+  padding: 5px 7px;
+  color: #000;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ---- Nav Links — sit right after search, small gap via search's margin-right ---- */
+
+.elements {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6rem;
+  flex-shrink: 0;
+  margin-right: 24px;            /* gap between links and wish-cart */
+}
+
+.elements a {
+  color: #fff;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.elements a:hover {
   color: bisque;
 }
 
-.search-box{
-    max-width: 250px;
-    cursor: pointer;
-    z-index: 1;
-    display: flex;
-    flex: 1;
-    align-items: center;
-    width: 40vw;
-    height: 30%;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 0 15px;
-}
+/* ---- Wish / Cart — at the far right end ---- */
 
-.search-box input{
-    height: 100%;
-    cursor: pointer;
-    z-index: 1;
-    flex: 1;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    color: rgb(0, 0, 0);
-    border: none;
-    outline: none;
-    font-size: 16px;
-}
-
-.search-box input::placeholder{
-
-  color: #666;
-
-}
-
-.search-box i{
-    font-size: 20px;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1;
-    color: rgb(0, 0, 0);
-    background-color: white;
-    border-radius: 50%;
-}
-
-.search-box:hover{
-
-  background-color: #b4b2a9;
-}
-
-.search-box input:hover{
-    background-color: #b4b2a9;
-}
-
-.wish-cart{
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-right: 20px;
-}
-
-
-.wish-cart i{
-
-  color: white;
-}
-
-.elements{
-  color: white;
+.wish-cart {
+  position: relative;
   z-index: 1;
-  text-decoration: none;
-  justify-content: space-between;
-  width: 30vw;
-  gap: 15%;
-  padding: 10px 20px;
   display: flex;
-
+  align-items: center;
+  flex-shrink: 0;
+  gap: 20px;
 }
 
-@media (max-width :600px){
-
-  .search-box input{
-    display: none;
-  };
-  .search-box{
-    width: 10vw;
-  }
-
+.wish-cart i {
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-@media (max-width :400px){
-
-  .search-box input{
-    display: none;
-  };
-  .search-box{
-    
-    display: none;
-  }
-
+.wish-cart i:hover {
+  color: bisque;
 }
 
-/* ============  HERO  ================  */
-
+/* ============  HERO  ============ */
 
 .hero {
-  min-height: 200px;
+  min-height: 25vh;
+  padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   background-color: #2c2c2a;
-  padding: 2rem;
 }
 
 .hero-logo {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 700;
   letter-spacing: 0.18em;
   color: #f1efe8;
-  margin: 0 0 1rem;
+  margin-bottom: 1rem;
 }
 
 .hero-tagline {
   font-size: 1rem;
   font-style: italic;
   color: #b4b2a9;
-  margin: 0 0 2rem;
+  margin-bottom: 2rem;
   max-width: 400px;
 }
 
@@ -188,24 +205,249 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .hero-cta:hover {
   background: #f1efe8;
   color: #2c2c2a;
+  transform: translateY(-2px) scale(1.05);
 }
 
-@media (max-width :600px){
-    .hero-logo{
-        letter-spacing:0.8rem ;
-        font-size:2.2rem;
-    }
+/* ============  BRAND SECTION  ============ */
 
-    .hero-cta{
-        padding: 0.9rem 1.2rem;
-    }
-
-
+.brand-items {
+  width: 100%;
 }
 
+.brand {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.brand img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border: 5px solid black;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  width: 90%;
+  gap: 0.75rem;
+}
+
+.overlay-text h3 {
+  color: bisque;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.2rem;
+}
+
+.overlay-text h1 {
+  color: rgb(255, 155, 33);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  letter-spacing: 0.5rem;
+  font-family: "Caveat", cursive;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title::before,
+.title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: rgb(255, 155, 33);
+}
+
+.title h2 {
+  color: rgb(255, 155, 33);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2rem);
+  letter-spacing: 0.2rem;
+}
+
+.title p {
+  color: white;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.12rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ============  RESPONSIVE  ============ */
+
+/* Tighten at 1024px before things get cramped */
+@media (max-width: 1024px) {
+  .search-box {
+    width: 180px;
+    margin-right: 16px;
+  }
+
+  .elements {
+    gap: 1.2rem;
+    margin-right: 18px;
+  }
+}
+
+/* Tighten more at 900px */
+@media (max-width: 900px) {
+  .search-box {
+    width: 150px;
+    margin-right: 12px;
+  }
+
+  .elements {
+    gap: 0.9rem;
+    margin-right: 14px;
+  }
+
+  .elements a {
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+  }
+
+  .logo h1 {
+    font-size: 1rem;
+  }
+
+  .wish-cart {
+    gap: 14px;
+  }
+}
+
+/* 2-row layout at 650px */
+@media (max-width: 650px) {
+  .navbar {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 8px 12px;
+    gap: 6px;
+  }
+
+  .logo {
+    order: 1;
+    flex: 1;
+  }
+
+  .wish-cart {
+    order: 2;
+    flex: 0;
+  }
+
+  .search-box {
+    order: 3;
+    flex: 0;
+    width: auto;
+    margin-left: 0;
+    margin-right: 8px;
+    padding: 3px 6px;
+    background: transparent;
+    border-color: rgba(255,255,255,0.3);
+  }
+
+  /* input hidden by default — JS adds .open to expand it */
+  .search-box input {
+    display: none;
+    width: 0;
+  }
+
+  .search-box.open {
+    background: white;
+    border-color: #ccc;
+    width: 180px;
+    margin-right: 8px;
+  }
+
+  .search-box.open input {
+    display: block;
+    width: 100%;
+    color: #000;
+  }
+
+  .search-box.open i {
+    color: #000;
+  }
+
+  .search-box i {
+    color: white;
+    font-size: 14px;
+  }
+
+  .elements {
+    order: 4;
+    flex: 1;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    margin-right: 0;
+  }
+
+  .elements a {
+    font-size: 0.75rem;
+  }
+
+  .logo h1 {
+    font-size: 0.95rem;
+  }
+}
+
+/* Very small screens — keep icon, tighten links */
+@media (max-width: 420px) {
+  .search-box {
+    display: flex;              /* keep the icon visible */
+    margin-right: 4px;
+  }
+
+  .search-box.open {
+    width: 140px;
+  }
+
+  .elements {
+    gap: 0.45rem;
+  }
+
+  .elements a {
+    font-size: 0.68rem;
+    letter-spacing: 0;
+  }
+}
+
+/* Hero responsive */
+@media (max-width: 600px) {
+  .hero-logo {
+    letter-spacing: 0.8rem;
+    font-size: 2.2rem;
+  }
+
+  .hero-cta {
+    padding: 0.9rem 1.2rem;
+  }
+
+  .overlay-text h1 {
+    letter-spacing: 2px;
+  }
+
+  .overlay-text h3 {
+    letter-spacing: 2px;
+  }
+}
