@@ -232,7 +232,7 @@
   height: auto;
   display: block;
   object-fit: cover;
-  border: 5px solid black;
+  border: 3px solid black;
 }
 
 .overlay-text {
@@ -289,10 +289,11 @@
 .title p {
   color: white;
   font-family: "Bebas Neue", sans-serif;
-  font-weight: 700;
+  font-weight: 200;
   letter-spacing: 0.12rem;
   line-height: 1.6;
   text-align: center;
+  -webkit-text-s: 0.00px black;
 }
 
 /* ============  RESPONSIVE  ============ */
@@ -465,4 +466,102 @@
   .overlay-text h3 {
     letter-spacing: 2px;
   }
+}
+
+.collection{
+  margin-top: 20px;
+  border: 3px solid black;
+  height: auto;
+  background-color: rgb(234, 228, 214);
+}
+
+.tag{
+  width: 35%;
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+
+.tag h1{
+  font-weight: 600;
+  text-align: left;
+}
+
+/*====== COLLECTION ======*/
+
+.shoes{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 25px;
+    margin: 40px 20px;
+    /* flex-wrap: wrap; */
+    flex: 1;            /* All 3 cards get equal width */
+    min-width: 0;  
+}
+
+.shoe{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    /* min-width: 240px; */
+    aspect-ratio: 3 / 4;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+
+    transition: transform .3s ease;
+}
+
+.shoe:hover{
+    transform: translateY(-5px);
+}
+
+.shoe img{
+    aspect-ratio: 1 / 1;
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px;
+    padding: 10%;
+    box-sizing: border-box;
+    object-fit: contain;
+    border-radius: 18px;
+}
+
+.shoe h3,
+.shoe p{
+    padding-left: 10%;
+    font-weight: 700;
+}
+
+.shoe h3{
+    padding-top: 10%;
+}
+
+.shoe p{
+    margin-top: auto;
+    padding-bottom: 8%;
+}
+
+/* Different backgrounds */
+
+.shoe1 img{
+    background: rgb(177,155,128);
+}
+
+.shoe2 img{
+    background: rgb(108,108,108);
+}
+
+.shoe3 img{
+    background: rgb(73,134,78);
+}
+
+.shoe img{
+    width: calc(100% - 20px);
+    height: 220px;          /* Fixed height */
+    margin: 10px;
+    padding: 8%;
+    object-fit: contain;
+    box-sizing: border-box;
+    border-radius: 18px;
 }
