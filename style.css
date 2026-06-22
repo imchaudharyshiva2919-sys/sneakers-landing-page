@@ -661,3 +661,69 @@
     width: 85%;
     z-index: 2;
 }
+
+
+.featured-card img{
+    width: 80%;
+    position: absolute;
+    rotate: 15deg;
+    right: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.featured-card h1{
+  position: absolute;
+  color: rgb(255, 94, 121);
+  display: inline;
+  stroke-width: 2px solid black;
+  left: 50%;
+  top: 20%;
+  font-size: clamp(2rem ,6vw ,5rem);
+  font-family: "Aclonica", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.featured-card h2{
+  position: absolute;
+  color: rgb(0, 0, 0);
+  display: inline;
+  stroke-width: 2px solid black;
+  left: 50%;
+  top: 35%;
+  font-size: clamp(1rem ,4.5vw ,4rem);
+  font-family: "Aclonica", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.featured-model{
+  color:rgb(255, 94, 121) ;
+}
+
+
+.featured-card p{
+    position:absolute;
+    top:50%;
+    left:60%;
+    right:2%;
+    padding-bottom: 70px;
+    font-size:clamp(0.5rem,1vw,5rem);
+    line-height:1;
+}
+
+.featured-button{
+  z-index: 3;
+  color: white;
+  font-weight: 700;
+  width: 10%;
+  font-size: clamp(0.5rem , 1vw , 3rem);
+  position: absolute;
+  left: 80%;
+  top: 60%;
+  background-color: rgb(255, 94, 121);
+  padding: 7px 5px;
+  border-radius: 5px;
+  display: inline;
+}
