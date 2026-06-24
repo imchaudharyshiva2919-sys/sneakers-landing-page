@@ -506,7 +506,7 @@
 .olive h3 {
   position: absolute;
   top: 75%;
-  font-size: clamp(0.3rem,1vw,0.7rem);
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   padding-right: 5px;
 }
 
@@ -517,11 +517,11 @@
   left: 35%;
   top: 50%;
   border-radius: 50%;
-  border-top:    30px solid white;
-  border-right:  30px solid rgb(255,94,121);
-  border-bottom: 30px solid rgb(255,94,121);
-  border-left:   30px solid white;
-  transform: translate(-50%,-50%) rotate(-45deg);
+border-top:    55px solid white;
+border-right:  55px solid rgb(255,94,121);
+border-bottom: 55px solid rgb(255,94,121);
+border-left:   55px solid white;
+transform: translate(-50%,-50%) rotate(-45deg);
 }
 
 /* RESPONSIVE BREAKPOINTS */
