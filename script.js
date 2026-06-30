@@ -131,7 +131,7 @@ const shoes = [
     color: "#daaa63"
 }
 ];
-
+let activeThumb;
 const shoeName = document.getElementById("shoeName");
 const price = document.getElementById("price");
 const mainImage = document.getElementById("mainImage");
@@ -182,12 +182,11 @@ function renderPage() {
         }
 
     });
+    activeThumb = null
 
 }
 
 renderPage();
-
-let activeThumb = null;
 
   // Thumb 1
   thumb1.addEventListener("click", function () {
@@ -197,7 +196,7 @@ let activeThumb = null;
       let temp = shoe.thumbnails[0];
       let temp2 = shoe.mainImage;
 
-      
+
 
       if(activeThumb != 1){
   
