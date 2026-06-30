@@ -187,8 +187,87 @@ function renderPage() {
 
 renderPage();
 
-sizes.forEach((size) => {
+let activeThumb = null;
 
+  // Thumb 1
+  thumb1.addEventListener("click", function () {
+      const shoe = shoes[currentIndex];
+      thumb2.src = shoe.thumbnails[1];
+      thumb3.src = shoe.thumbnails[2];
+      let temp = shoe.thumbnails[0];
+      let temp2 = shoe.mainImage;
+
+      
+
+      if(activeThumb != 1){
+  
+      thumb1.src = shoe.mainImage;
+
+      mainImage.src = temp;
+
+      activeThumb = 1
+
+      } else {
+        activeThumb = null
+
+        thumb1.src = shoe.thumbnails[0]
+
+        mainImage.src = temp2
+      }
+  });
+
+  // Thumb 2
+  thumb2.addEventListener("click", function () {
+      const shoe = shoes[currentIndex];
+      thumb1.src = shoe.thumbnails[0];
+      thumb3.src = shoe.thumbnails[2];
+      let temp = shoe.thumbnails[1];
+      let temp2 = shoe.mainImage
+
+      if(activeThumb != 2){
+  
+      thumb2.src = shoe.mainImage;
+
+      mainImage.src = temp;
+
+      activeThumb = 2
+
+      } else {
+        activeThumb = null
+
+        thumb2.src = shoe.thumbnails[1]
+
+        mainImage.src = temp2
+      }
+  });
+
+  // Thumb 3
+  thumb3.addEventListener("click", function () {
+      const shoe = shoes[currentIndex];
+      thumb2.src = shoe.thumbnails[1];
+      thumb1.src = shoe.thumbnails[0];
+      let temp = shoe.thumbnails[2];
+      let temp2 = shoe.mainImage
+
+      if(activeThumb != 3){
+  
+      thumb3.src = shoe.mainImage;
+
+      mainImage.src = temp;
+
+      activeThumb = 3
+
+      } else {
+        activeThumb = null
+
+        thumb3.src = shoe.thumbnails[2]
+
+        mainImage.src = temp2
+      }
+  });
+
+//========= size selector ============//
+  sizes.forEach((size) => {
     size.addEventListener("click", function(){
 
         sizes.forEach((item) => {
