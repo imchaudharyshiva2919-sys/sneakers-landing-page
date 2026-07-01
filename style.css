@@ -727,7 +727,6 @@ body{
 
 #shoeName{
     color: white;
-    margin-bottom:20px;
 }
 
 .main{
@@ -828,9 +827,6 @@ body{
     margin-bottom:30px;
 }
 
-.right{
-    width:250px;
-}
 
 .sizes{
   margin-top: 20%;
